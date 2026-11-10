@@ -1,0 +1,120 @@
+{
+  "_nota": "Documentos del caso de muestra. Todos inventados.",
+  "documentos": [
+    {
+      "id": "pasaporte",
+      "es": "Pasaporte",
+      "en": "Passport",
+      "emisor": "República Bolivariana de Venezuela",
+      "de": "María Alejandra Rivas Montero",
+      "campos": [
+        "4",
+        "5",
+        "6",
+        "23",
+        "24",
+        "25",
+        "26",
+        "35",
+        "36.1",
+        "37"
+      ]
+    },
+    {
+      "id": "matrimonio",
+      "es": "Acta de matrimonio",
+      "en": "Marriage certificate",
+      "emisor": "Registro Civil de Maracaibo, Zulia",
+      "de": "Rivas Montero / Fernández Soto",
+      "campos": [
+        "22",
+        "41",
+        "46",
+        "47",
+        "48",
+        "50",
+        "51.1",
+        "52"
+      ]
+    },
+    {
+      "id": "nac_santiago",
+      "es": "Partida de nacimiento",
+      "en": "Birth certificate",
+      "emisor": "Registro Civil de Maracaibo, Zulia",
+      "de": "Santiago Fernández Rivas",
+      "campos": [
+        "71.1",
+        "72.1",
+        "74.1",
+        "75.1",
+        "76.1",
+        "78.1"
+      ]
+    },
+    {
+      "id": "nac_valentina",
+      "es": "Partida de nacimiento",
+      "en": "Birth certificate",
+      "emisor": "Registro Civil de Maracaibo, Zulia",
+      "de": "Valentina Fernández Rivas",
+      "campos": [
+        "71.2",
+        "72.2",
+        "74.2",
+        "75.2",
+        "76.2",
+        "78.2"
+      ]
+    },
+    {
+      "id": "i94",
+      "es": "Registro de entrada I-94",
+      "en": "I-94 arrival record",
+      "emisor": "U.S. Customs and Border Protection",
+      "de": "Rivas Montero, María Alejandra",
+      "campos": [
+        "32.1.1",
+        "32.1.2",
+        "32.1.3",
+        "30"
+      ]
+    }
+  ],
+  "etiquetas_en": {
+    "4": "Last name",
+    "5": "First name",
+    "6": "Middle name",
+    "22": "Marital status",
+    "23": "Date of birth",
+    "24": "City and country of birth",
+    "25": "Present nationality",
+    "26": "Nationality at birth",
+    "30": "Date you last left your country",
+    "32.1.1": "Date of entry",
+    "32.1.2": "Place of entry",
+    "32.1.3": "Status at entry",
+    "35": "Passport issuing country",
+    "36.1": "Passport number",
+    "37": "Passport expiry date",
+    "41": "Spouse — full name",
+    "46": "Spouse — last name",
+    "47": "Spouse — first name",
+    "48": "Spouse — middle name",
+    "50": "Date of marriage",
+    "51.1": "Place of marriage",
+    "52": "Spouse — nationality",
+    "71.1": "Child 1 — last name",
+    "72.1": "Child 1 — first name",
+    "74.1": "Child 1 — date of birth",
+    "75.1": "Child 1 — city and country of birth",
+    "76.1": "Child 1 — nationality",
+    "78.1": "Child 1 — sex",
+    "71.2": "Child 2 — last name",
+    "72.2": "Child 2 — first name",
+    "74.2": "Child 2 — date of birth",
+    "75.2": "Child 2 — city and country of birth",
+    "76.2": "Child 2 — nationality",
+    "78.2": "Child 2 — sex"
+  }
+}
