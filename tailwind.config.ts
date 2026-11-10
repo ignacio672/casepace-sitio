@@ -48,7 +48,6 @@ export default {
       },
       boxShadow: {
         window: "0 12px 32px rgba(18, 18, 18, 0.08)",
-        sheet: "0 1px 0 rgba(18, 18, 18, 0.06), 0 10px 24px rgba(18, 18, 18, 0.10)",
         page: "0 1px 2px rgba(18, 18, 18, 0.10), 0 6px 14px rgba(18, 18, 18, 0.08)",
       },
       maxWidth: {
@@ -59,10 +58,6 @@ export default {
       },
       keyframes: {
         "fade-in": { from: { opacity: "0" }, to: { opacity: "1" } },
-        "rise-in": {
-          from: { opacity: "0", transform: "translateY(8px)" },
-          to: { opacity: "1", transform: "translateY(0)" },
-        },
         "hero-in": {
           from: { opacity: "0", transform: "translateY(14px)" },
           to: { opacity: "1", transform: "translateY(0)" },
@@ -88,7 +83,6 @@ export default {
       },
       animation: {
         "fade-in": "fade-in 200ms cubic-bezier(0.22, 1, 0.36, 1) both",
-        "rise-in": "rise-in 220ms cubic-bezier(0.22, 1, 0.36, 1) both",
         "hero-in": "hero-in 600ms cubic-bezier(0.22, 1, 0.36, 1) both",
         "page-in": "page-in 300ms cubic-bezier(0.22, 1, 0.36, 1) both",
         "card-in": "card-in 240ms cubic-bezier(0.22, 1, 0.36, 1) both",

@@ -202,10 +202,8 @@ export const interviewTurns: InterviewTurn[] = INTERVIEW_TURN_NUMBERS.map((numbe
 export const interviewUi = {
   phone: { title: "Casepace", subtitle: "Interview" },
   team: {
-    part: "Part B · Question 1",
     basis: "Seeking asylum or withholding of removal based on",
     checkboxes: ["Political opinion", "Membership in a particular social group", "Torture Convention"],
-    declaration: "Declaration",
     past: "Harm or mistreatment in the past",
     pastRef: "B.1.A",
     fear: "Fear of return",
@@ -237,7 +235,6 @@ export const heroSheet = {
     "Have you, your family, or close friends or colleagues ever experienced harm or mistreatment or threats in the past by anyone?",
   no: "No",
   yes: "Yes",
-  explain: "If “Yes,” explain in detail:",
   before: [
     "I am an intensive care nurse. I worked for twelve years at the University Hospital of Maracaibo.",
     "In February 2019, the hospital ran out of basic supplies. There were no gauzes, no antibiotics, and not enough oxygen. I saw three patients die in a week from preventable causes. Together with fourteen other nurses, we organized a protest in front of the hospital entrance. We carried signs with the list of missing items. I was one of those who spoke to the press.",
@@ -249,8 +246,6 @@ export const heroSheet = {
   ],
   nextLetter: "B.",
   nextQuestion: "Do you fear harm or mistreatment if you return to your home country?",
-  footer: "Form I-589",
-  pageNumber: "Page 5 of 12",
 };
 
 /* ───────────────────────── Paso 3 · Filing package ───────────────────────── */

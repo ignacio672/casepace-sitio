@@ -38,7 +38,7 @@ export function Nav() {
   const [open, setOpen] = useState(false);
   const base = ROUTES[audience];
 
-  // El menú del teléfono se cierra al navegar y con Escape.
+  // El menú del teléfono se abre sobre la página, sin empujarla. Se cierra al navegar y con Escape.
   useEffect(() => setOpen(false), [location.pathname, location.hash]);
   useEffect(() => {
     if (!open) return;
@@ -94,7 +94,10 @@ export function Nav() {
         </div>
       </div>
       {open && (
-        <div id="menu" className="animate-fade-in border-t border-ink-line lg:hidden">
+        <div
+          id="menu"
+          className="absolute inset-x-0 top-full animate-fade-in border-b border-t border-ink-line bg-ink lg:hidden"
+        >
           <nav aria-label="Main" className="wrap flex flex-col gap-1 py-5 [&>a]:py-2 [&>a]:text-[17px]">
             {links}
           </nav>
