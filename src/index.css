@@ -45,16 +45,16 @@
 @font-face {
   font-family: "Newsreader Fallback";
   src: local("Georgia");
-  size-adjust: 91%;
-  ascent-override: 94%;
-  descent-override: 28%;
+  size-adjust: 100%;
+  ascent-override: 74%;
+  descent-override: 26%;
   line-gap-override: 0%;
 }
 @font-face {
   font-family: "Figtree Fallback";
   src: local("Arial"), local("Helvetica");
-  size-adjust: 99%;
-  ascent-override: 96%;
+  size-adjust: 101%;
+  ascent-override: 94%;
   descent-override: 25%;
   line-gap-override: 0%;
 }

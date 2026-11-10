@@ -25,13 +25,15 @@ export function Phone({
         className,
       )}
     >
+      {/* El fondo de la pantalla es negro como el marco: así el borde redondeado no deja un filo claro. */}
       <div
         className={cn(
           "relative flex h-full flex-col overflow-hidden rounded-[26px]",
-          dark ? "bg-ink text-paper" : "bg-white text-ink",
+          dark ? "bg-ink text-paper" : "bg-black text-ink",
         )}
       >
-        <div className="flex h-8 shrink-0 items-center justify-between px-5 pt-1 text-[11.5px] font-semibold tabular">
+        {!dark && <div className="absolute inset-0 rounded-[26px] bg-white" />}
+        <div className="relative flex h-8 shrink-0 items-center justify-between px-5 pt-1 text-[11.5px] font-semibold tabular">
           <span>{time}</span>
           <span className="flex items-center gap-1" aria-hidden>
             <span className="flex items-end gap-[2px]">

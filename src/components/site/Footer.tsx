@@ -9,7 +9,7 @@ const linkClass = "rounded-[6px] text-paper/75 transition-colors duration-200 ho
 function Column({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h2 className="text-[14px] text-ink-muted">{title}</h2>
+      <h3 className="text-[14px] font-normal text-ink-muted">{title}</h3>
       <ul className="mt-4 space-y-2.5 text-[15.5px]">{children}</ul>
     </div>
   );

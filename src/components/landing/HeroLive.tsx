@@ -133,7 +133,10 @@ export function HeroLive({ className }: { className?: string }) {
               <Typing />
             ) : (
               <>
-                <p className="w-fit rounded-[18px] rounded-bl-[6px] bg-white px-3.5 py-2.5 text-[16px] leading-[1.4] text-ink">
+                <p
+                  lang="es"
+                  className="w-fit rounded-[18px] rounded-bl-[6px] bg-white px-3.5 py-2.5 text-[16px] leading-[1.4] text-ink"
+                >
                   <span className={cn("mark mark-sweep", state.sources < state.said && "mark-off")}>{said.es}</span>
                 </p>
                 <p lang="en" className="mt-2 px-1 text-[13.5px] leading-[1.42] text-ink-muted">

@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Camera, Check } from "lucide-react";
 import { documentPhotos } from "@/assets/images";
 import { demo, documents, documentsUi, type CaseDocument } from "@/content/sampleCase";
@@ -35,7 +35,7 @@ function PhoneScreen({
 
   return (
     <>
-      <div className="flex min-h-0 flex-1 flex-col px-3.5 pb-3.5 pt-1.5">
+      <div className="relative flex min-h-0 flex-1 flex-col px-3.5 pb-3.5 pt-1.5">
         <p className="px-0.5 text-[15px] font-semibold">{documentsUi.phone.title}</p>
         <ul className="mt-2.5 flex-1">
           {documents.map((doc, i) =>
@@ -190,10 +190,11 @@ function SourceStrip({
         }}
       >
         <img src={documentPhotos[doc.id].photo} alt="" width={1040} height={780} className="h-full w-full" />
+        {/* El resaltador se mueve con transform, así no cuenta como salto de diseño. */}
         {box && (
           <span
-            className="absolute rounded-[2px] bg-citron mix-blend-multiply [transition:all_80ms_linear]"
-            style={{ left: `${box.x}%`, top: `${box.y}%`, width: `${box.w}%`, height: `${box.h}%` }}
+            className="absolute inset-0 origin-top-left bg-citron mix-blend-multiply [transition:transform_80ms_linear]"
+            style={{ transform: `translate(${box.x}%, ${box.y}%) scale(${box.w / 100}, ${box.h / 100})` }}
           />
         )}
       </div>
@@ -260,6 +261,11 @@ export function DocumentsStage() {
   });
   const state = documentsState(TIMELINE.events, step);
   const active = state.active === null ? null : documents[state.active];
+
+  // Las fotos se piden de antemano, para que ninguna aparezca a medio cargar.
+  useEffect(() => {
+    for (const doc of documents) new Image().src = documentPhotos[doc.id].photo;
+  }, []);
 
   return (
     <Stage

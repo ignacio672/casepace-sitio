@@ -63,6 +63,10 @@ export default {
           from: { opacity: "0", transform: "translateY(8px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
+        "hero-in": {
+          from: { opacity: "0", transform: "translateY(14px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
         "page-in": {
           from: { opacity: "0", transform: "translateY(64px) rotate(var(--giro))" },
           to: { opacity: "1", transform: "translateY(0) rotate(var(--giro))" },
@@ -85,6 +89,7 @@ export default {
       animation: {
         "fade-in": "fade-in 200ms cubic-bezier(0.22, 1, 0.36, 1) both",
         "rise-in": "rise-in 220ms cubic-bezier(0.22, 1, 0.36, 1) both",
+        "hero-in": "hero-in 600ms cubic-bezier(0.22, 1, 0.36, 1) both",
         "page-in": "page-in 300ms cubic-bezier(0.22, 1, 0.36, 1) both",
         "card-in": "card-in 240ms cubic-bezier(0.22, 1, 0.36, 1) both",
         flash: "flash 120ms linear both",

@@ -62,6 +62,7 @@ function Chat({ shown, translated, typing }: { shown: number; translated: number
             <div key={turn.number} className="grid shrink-0 animate-grow">
               <div className={cn("flex min-h-0 flex-col overflow-hidden pt-3", mine ? "items-end" : "items-start")}>
                 <p
+                  lang="es"
                   className={cn(
                     "max-w-[88%] rounded-[16px] px-3 py-2 text-[13.5px] leading-[1.38]",
                     mine ? "rounded-br-[5px] bg-white text-ink" : "rounded-bl-[5px] bg-ink-bubble text-paper",
