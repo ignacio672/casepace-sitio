@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fuentes servidas desde el propio sitio (public/fonts). Son las de Google
+   Fonts: Newsreader con su eje óptico, Figtree e IBM Plex Mono. */
+@font-face {
+  font-family: "Newsreader";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("/fonts/newsreader-latin-opsz-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Newsreader";
+  font-style: italic;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("/fonts/newsreader-latin-opsz-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Figtree";
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("/fonts/figtree-latin-wght-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-mono-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-mono-latin-500-normal.woff2") format("woff2");
+}
+
+/* Fuentes de respaldo con las medidas ajustadas a las definitivas, para que
+   el texto no salte de lugar cuando termina de cargar la fuente. */
+@font-face {
+  font-family: "Newsreader Fallback";
+  src: local("Georgia");
+  size-adjust: 91%;
+  ascent-override: 94%;
+  descent-override: 28%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Figtree Fallback";
+  src: local("Arial"), local("Helvetica");
+  size-adjust: 99%;
+  ascent-override: 96%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+}
+
+@layer base {
+  :root {
+    --focus: #121212;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 88px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+    font-size: 17px;
+    line-height: 1.6;
+    font-optical-sizing: auto;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: #e4f27a;
+    color: #121212;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  /* Ancho de página y márgenes. */
+  .wrap {
+    @apply mx-auto w-full max-w-wrap px-5 sm:px-8 lg:px-11;
+  }
+
+  /* Las franjas negras cambian el color del foco. */
+  .on-dark {
+    --focus: #f4f2ee;
+    @apply bg-ink text-paper;
+  }
+
+  /* El resaltador: pasa sobre el texto de izquierda a derecha. */
+  .mark {
+    background-image: linear-gradient(#e4f27a, #e4f27a);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 100% 100%;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    padding: 0.06em 0.12em;
+    margin: 0 -0.12em;
+    border-radius: 2px;
+    color: #121212;
+  }
+  .mark-off {
+    background-size: 0% 100%;
+  }
+  .mark-sweep {
+    transition: background-size 250ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* El resaltador que pasa una vez sobre un dato recién escrito y se apaga.
+     Entra por la izquierda y sale por la derecha. */
+  .mark-pass {
+    background-image: linear-gradient(#e4f27a, #e4f27a);
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    animation: mark-pass 560ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  /* Marcador de contenido pendiente. Se busca con data-pendiente. */
+  .pending {
+    border: 1px dashed rgba(18, 18, 18, 0.5);
+    background: repeating-linear-gradient(
+      -45deg,
+      rgba(18, 18, 18, 0.045) 0 6px,
+      transparent 6px 12px
+    );
+    border-radius: 3px;
+    padding: 0.05em 0.35em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+}
+
+@keyframes mark-pass {
+  0% {
+    background-size: 0% 100%;
+    background-position: 0 0;
+  }
+  45% {
+    background-size: 100% 100%;
+    background-position: 0 0;
+  }
+  55% {
+    background-size: 100% 100%;
+    background-position: 100% 0;
+  }
+  100% {
+    background-size: 0% 100%;
+    background-position: 100% 0;
+  }
+}
+
+@layer utilities {
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Con movimiento reducido no se anima nada: cada escenario muestra su estado
+   final. Los componentes además dejan de programar temporizadores. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+}
