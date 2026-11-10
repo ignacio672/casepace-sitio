@@ -1,0 +1,250 @@
+{
+  "_nota": "Guion del demo. Persona inventada. El espanol es lo que ve el solicitante; el ingles es la traduccion que lee quien evalua comprar.",
+  "caso": "caso_muestra.json",
+  "turnos": [
+    {
+      "de": "asistente",
+      "es": "Hola María. Ya tengo tus datos del pasaporte y los de Carlos y los chicos. Me falta la parte más importante y la más difícil de contar: por qué te fuiste de Venezuela.",
+      "en": "Hi María. I already have your passport details and Carlos's and the kids'. What's left is the most important part, and the hardest to talk about: why you left Venezuela.",
+      "captura": []
+    },
+    {
+      "de": "asistente",
+      "es": "Tomate el tiempo que necesites. Si algo no lo querés contar hoy, seguimos y volvemos después.",
+      "en": "Take all the time you need. If there's something you'd rather not go into today, we can move on and come back to it.",
+      "captura": []
+    },
+    {
+      "de": "solicitante",
+      "es": "es largo. empezó en el hospital, en 2019",
+      "en": "it's a long story. it started at the hospital, in 2019",
+      "captura": []
+    },
+    {
+      "de": "asistente",
+      "es": "Contame desde ahí. ¿Qué pasó en el hospital en 2019?",
+      "en": "Start there. What happened at the hospital in 2019?",
+      "captura": []
+    },
+    {
+      "de": "solicitante",
+      "es": "no había nada. ni gasas ni antibióticos. se nos morían pacientes de cosas que se arreglaban con nada. me acuerdo de tres en una semana",
+      "en": "there was nothing left. no gauze, no antibiotics. patients were dying of things that cost almost nothing to fix. I remember three in one week",
+      "captura": []
+    },
+    {
+      "de": "asistente",
+      "es": "¿Y qué hicieron?",
+      "en": "And what did you do about it?",
+      "captura": []
+    },
+    {
+      "de": "solicitante",
+      "es": "nos paramos en la puerta del hospital con carteles. éramos como quince enfermeras. yo hablé con la prensa, fui una de las que dio la cara",
+      "en": "we stood at the hospital entrance with signs. about fifteen of us nurses. I spoke to the press, I was one of the ones who showed her face",
+      "captura": [
+        "156.2"
+      ]
+    },
+    {
+      "de": "asistente",
+      "es": "Eso que hiciste —organizar y hablar públicamente— es lo que el formulario llama opinión política. Lo voy anotando como uno de los motivos de tu solicitud.",
+      "en": "What you did — organizing and speaking publicly — is what the form calls political opinion. I'm recording it as one of the grounds for your claim.",
+      "captura": [
+        "156.2"
+      ]
+    },
+    {
+      "de": "solicitante",
+      "es": "a los días me agarraron",
+      "en": "a few days later they took me",
+      "captura": [
+        "157.1"
+      ]
+    },
+    {
+      "de": "asistente",
+      "es": "¿Quién te detuvo? ¿Eran policías de uniforme, o gente de civil?",
+      "en": "Who detained you? Uniformed police, or men in plain clothes?",
+      "captura": []
+    },
+    {
+      "de": "solicitante",
+      "es": "de civil. cuatro. salía del turno de noche. no me mostraron ninguna orden",
+      "en": "plain clothes. four of them. I was coming off the night shift. they didn't show me any warrant",
+      "captura": [
+        "159.1"
+      ]
+    },
+    {
+      "de": "asistente",
+      "es": "¿Y adónde te llevaron? ¿Sabés qué organismo era?",
+      "en": "And where did they take you? Do you know which agency it was?",
+      "captura": []
+    },
+    {
+      "de": "solicitante",
+      "es": "al SEBIN, en la avenida 15. cuatro días en un cuarto sin ventana",
+      "en": "to the SEBIN, on Avenida 15. four days in a room with no window",
+      "captura": [
+        "159.2"
+      ]
+    },
+    {
+      "de": "asistente",
+      "es": "¿Te acusaron formalmente de algo?",
+      "en": "Were you formally charged with anything?",
+      "captura": []
+    },
+    {
+      "de": "solicitante",
+      "es": "nunca. me preguntaban quién pagaba las protestas, quién me daba órdenes. uno me dijo que yo no era enfermera, que era política, y que las políticas ahí desaparecen",
+      "en": "never. they kept asking who was paying for the protests, who was giving me orders. one of them told me I wasn't a nurse, I was a politician, and that politicians disappear there",
+      "captura": [
+        "159.2"
+      ]
+    },
+    {
+      "de": "asistente",
+      "es": "Eso que te dijeron lo voy a poner entre comillas, textual. Es lo que muestra el motivo real de la detención, más que cualquier acusación formal que no existió.",
+      "en": "I'm going to put what they said in quotation marks, word for word. That's what shows the real reason for the detention, more than any formal charge that never existed.",
+      "captura": [
+        "159.2"
+      ]
+    },
+    {
+      "de": "asistente",
+      "es": "Te voy a hacer una pregunta difícil y es necesaria para el formulario: durante esos cuatro días, ¿te lastimaron físicamente?",
+      "en": "I need to ask you something difficult, and the form requires it: during those four days, did they hurt you physically?",
+      "captura": []
+    },
+    {
+      "de": "solicitante",
+      "es": "sí. en las costillas y en las plantas de los pies",
+      "en": "yes. my ribs, and the soles of my feet",
+      "captura": [
+        "162.1",
+        "156.7"
+      ]
+    },
+    {
+      "de": "asistente",
+      "es": "Gracias por decírmelo. Eso abre la protección bajo la Convención contra la Tortura, que es una vía aparte del asilo. Lo marco también.",
+      "en": "Thank you for telling me. That opens protection under the Convention Against Torture, which is a separate route from asylum. I'm marking that as well.",
+      "captura": [
+        "162.1",
+        "156.7",
+        "0.1"
+      ]
+    },
+    {
+      "de": "asistente",
+      "es": "Me dijiste que empezó en 2019. ¿Volvió a pasar después?",
+      "en": "You said it started in 2019. Did it happen again after that?",
+      "captura": []
+    },
+    {
+      "de": "solicitante",
+      "es": "sí, en 2023. once días en el retén de Cabimas. esa vez me dijeron que si seguía iban a buscar a los chicos al colegio. me dieron el nombre del colegio para que yo supiera que lo tenían",
+      "en": "yes, in 2023. eleven days at the Cabimas lockup. that time they told me if I kept going they'd pick the kids up at school. they gave me the name of the school so I'd know they had it",
+      "captura": [
+        "158.1",
+        "156.4"
+      ]
+    },
+    {
+      "de": "asistente",
+      "es": "¿Te acordás de la fecha exacta de esa segunda detención?",
+      "en": "Do you remember the exact date of that second detention?",
+      "captura": []
+    },
+    {
+      "de": "solicitante",
+      "es": "del 9 de enero estoy segura. de cuándo salí no, fue como el 20",
+      "en": "January 9th I'm sure of. when I got out, no, it was around the 20th",
+      "captura": []
+    },
+    {
+      "de": "asistente",
+      "es": "Entonces anoto el 9 de enero como cierto y la salida como aproximada, diciendo que no recordás el día exacto. No pongo una fecha que no me diste: esto se firma bajo juramento y un dato inventado, aunque sea de buena fe, le quita credibilidad a todo lo demás.",
+      "en": "Then I'll record January 9th as certain and the release as approximate, noting that you don't recall the exact day. I won't put in a date you didn't give me: this is signed under oath, and an invented detail, even a well-meant one, undermines the credibility of everything else.",
+      "captura": [
+        "159.2"
+      ]
+    },
+    {
+      "de": "asistente",
+      "es": "Antes mencionaste a tu hermano Luis Gregorio. ¿Querés contarme qué pasó con él?",
+      "en": "You mentioned your brother Luis Gregorio earlier. Do you want to tell me what happened to him?",
+      "captura": []
+    },
+    {
+      "de": "solicitante",
+      "es": "salió de la casa el 14 de septiembre de 2023 y no volvió. denunciamos. nadie investigó nada. él iba a las mismas reuniones que yo",
+      "en": "he left the house on September 14th 2023 and never came back. we reported it. nobody investigated anything. he used to go to the same meetings I did",
+      "captura": [
+        "155.3.4",
+        "158.2"
+      ]
+    },
+    {
+      "de": "asistente",
+      "es": "Que le haya pasado a alguien de tu familia que participaba en lo mismo es parte de por qué tu temor es fundado, y no solo una impresión tuya. Va en la solicitud.",
+      "en": "The fact that it happened to a family member who took part in the same activity is part of why your fear is well-founded, rather than just a feeling. It goes into the application.",
+      "captura": [
+        "158.2"
+      ]
+    },
+    {
+      "de": "asistente",
+      "es": "Última de esta parte: si tuvieras que volver mañana, ¿qué pensás que pasaría?",
+      "en": "Last one in this section: if you had to go back tomorrow, what do you think would happen?",
+      "captura": []
+    },
+    {
+      "de": "solicitante",
+      "es": "que me agarran en el aeropuerto y esa vez no salgo. el expediente del SEBIN nunca se cerró y ya me avisaron que era la última",
+      "en": "that they take me at the airport and that time I don't come out. the SEBIN file was never closed and they already told me it was the last warning",
+      "captura": [
+        "158.2"
+      ]
+    },
+    {
+      "de": "asistente",
+      "es": "¿Y si te fueras a otra ciudad de Venezuela?",
+      "en": "And if you moved to another city in Venezuela?",
+      "captura": []
+    },
+    {
+      "de": "solicitante",
+      "es": "el SEBIN es nacional. y mi nombre salió en la prensa. no hay a quién pedirle protección, los que me agarraron son el estado",
+      "en": "the SEBIN is nationwide. and my name was in the press. there's nobody to ask for protection, the people who took me are the state",
+      "captura": [
+        "158.2"
+      ]
+    },
+    {
+      "de": "asistente",
+      "es": "Con esto ya tengo la Parte B completa. Te la leo armada, en primera persona y en orden, para que me digas si es exacto antes de guardarla.",
+      "en": "That gives me a complete Part B. I'll read it back to you, written out in the first person and in order, so you can tell me whether it's accurate before I save it.",
+      "captura": [
+        "157.2",
+        "158.2",
+        "159.2",
+        "162.2"
+      ]
+    },
+    {
+      "de": "solicitante",
+      "es": "sí, es así. está todo",
+      "en": "yes, that's it. it's all there",
+      "captura": []
+    },
+    {
+      "de": "asistente",
+      "es": "Listo. El relato quedó en 1.886 caracteres, así que no entra en el recuadro del formulario: la parte que sobra sale en una hoja de continuación, el Supplement B, rotulada con la Parte y la pregunta que continúa. Es como USCIS espera que se presente.",
+      "en": "Done. The account came to 1,886 characters, which doesn't fit the box on the form: the overflow goes onto a continuation sheet, Supplement B, labelled with the Part and question it continues. That's how USCIS expects it to be filed.",
+      "captura": []
+    }
+  ]
+}
