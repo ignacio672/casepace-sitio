@@ -3,6 +3,8 @@
  *
  * Tiempos de material/pedidos_anteriores/07_demo_rapido_y_entrega.md.
  */
+import type { FanOptions } from "@/lib/fan";
+
 export const FILING_TIMING = {
   /** Lo que tarda cada página en llegar. */
   page: 300,
@@ -13,6 +15,12 @@ export const FILING_TIMING = {
   /** Lo que tarda la tarjeta en entrar. */
   card: 240,
 } as const;
+
+/**
+ * Geometría del abanico. Las pruebas comprueban que con estas medidas las
+ * páginas entran enteras en su panel, sin tocar los bordes.
+ */
+export const FILING_FAN: FanOptions = { pages: 7, boxRatio: 0.64, pageWidth: 34, step: 3.2, radius: 110 };
 
 export type FilingTimeline = {
   /** Retraso de cada página, en el orden en que llegan. */

@@ -7,16 +7,11 @@ import { filing } from "@/content/sampleCase";
 import { ANCHORS } from "@/content/site";
 import { useInView } from "@/hooks/useInView";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
-import { filingTimeline } from "@/lib/demo/filing";
-import { fan, type FanOptions } from "@/lib/fan";
+import { FILING_FAN, filingTimeline } from "@/lib/demo/filing";
+import { fan } from "@/lib/fan";
 import { cn } from "@/lib/utils";
 
-/**
- * Geometría del abanico. Las pruebas comprueban que con estas medidas las siete
- * páginas entran enteras en su panel, sin tocar los bordes.
- */
-export const FAN: FanOptions = { pages: filing.pages, boxRatio: 0.64, pageWidth: 34, step: 3.2, radius: 110 };
-
+const FAN = FILING_FAN;
 const LEAVES = fan(FAN);
 const TIMING = filingTimeline(filing.pages);
 
