@@ -6,8 +6,14 @@ anotado acá, en "Decisiones que conviene revisar".
 
 ## Cambio del 11 de noviembre: el inicio con la foto
 
-El inicio ahora lleva la foto del I-589 que pasó Ignacio (`Cover.svg`),
-entrando desde abajo a la derecha, con el texto arriba a la izquierda.
+El inicio ahora lleva la foto del I-589 que pasó Ignacio (`Cover.svg`), como
+una franja a todo el ancho apenas debajo de la barra, con el título y los dos
+llamados abajo, sobre el negro de la marca.
+
+Antes la foto iba detrás del texto, entrando desde abajo a la derecha. No se
+podía subir más: el hueco negro de la foto es un triángulo ancho y bajo, y el
+bloque de texto es alto, así que al subirla la hoja le pasaba por encima al
+titular y a la nota. La franja resuelve eso sin degradados ni recuadros.
 
 - La foto y su máscara quedaron en `material/imagenes/portada/`. `npm run
   imagenes` arma la versión con transparencia en `src/assets/portada/`, así
@@ -16,7 +22,7 @@ entrando desde abajo a la derecha, con el texto arriba a la izquierda.
   ser la segunda sección, con "Every sentence traces back to something the
   client said." como título. Esto reemplaza las decisiones 1 y 2 de más abajo
   en lo que toca a la composición del inicio.
-- Debajo de 1280 px la foto va después del texto, no detrás.
+- En el teléfono la franja se acerca al formulario, para que se lea.
 - A revisar: la foto muestra el encabezado real del I-589. Conviene confirmar
   que se tienen los derechos de uso de esa foto.
 
