@@ -102,6 +102,7 @@ export const landings: Record<Audience, LandingContent> = {
 export const shared = {
   hero: {
     seeCase: "See a case prepared",
+    photoAlt: "The first page of Form I-589, Application for Asylum and for Withholding of Removal, on a dark desk.",
     said: "What the client said",
     form: "What goes on the form",
     caption: "Every sentence traces back to something the client said.",

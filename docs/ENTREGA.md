@@ -4,6 +4,22 @@
 El plan original está en `docs/PLAN.md`; lo que cambió al construir está
 anotado acá, en "Decisiones que conviene revisar".
 
+## Cambio del 11 de noviembre: el inicio con la foto
+
+El inicio ahora lleva la foto del I-589 que pasó Ignacio (`Cover.svg`),
+entrando desde abajo a la derecha, con el texto arriba a la izquierda.
+
+- La foto y su máscara quedaron en `material/imagenes/portada/`. `npm run
+  imagenes` arma la versión con transparencia en `src/assets/portada/`, así
+  apoya sobre el negro de la marca y no sobre el negro del archivo original.
+- El elemento vivo (lo que dijo el cliente y lo que va al formulario) pasó a
+  ser la segunda sección, con "Every sentence traces back to something the
+  client said." como título. Esto reemplaza las decisiones 1 y 2 de más abajo
+  en lo que toca a la composición del inicio.
+- Debajo de 1280 px la foto va después del texto, no detrás.
+- A revisar: la foto muestra el encabezado real del I-589. Conviene confirmar
+  que se tienen los derechos de uso de esa foto.
+
 ## Qué hay
 
 - **Las dos landings,** `/for-firms` y `/for-organizations`: el mismo diseño

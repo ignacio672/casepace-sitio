@@ -56,6 +56,19 @@ def fundadores():
         guardar(foto.crop(caja).resize((720, 900), Image.LANCZOS), os.path.join(DESTINO, "fundadores", f"{nombre}.webp"), 84)
 
 
+def portada():
+    """La foto del I-589 del inicio, recortada con su máscara para que apoye sobre el negro de la marca."""
+    from PIL import ImageChops
+
+    foto = Image.open(os.path.join(ORIGEN, "portada", "i589_foto.png")).convert("RGBA")
+    mascara = Image.open(os.path.join(ORIGEN, "portada", "i589_mascara.png")).convert("L")
+    foto.putalpha(ImageChops.multiply(mascara, foto.getchannel("A")))
+    foto = foto.crop(foto.getchannel("A").getbbox())
+    alto = round(foto.height * 2400 / foto.width)
+    guardar(foto.resize((2400, alto), Image.LANCZOS), os.path.join(DESTINO, "portada", "i589.webp"), 82)
+    guardar(foto.resize((1200, alto // 2), Image.LANCZOS), os.path.join(DESTINO, "portada", "i589-chica.webp"), 80)
+
+
 def logo():
     os.makedirs(DESTINO, exist_ok=True)
     shutil.copyfile(os.path.join(ORIGEN, "casepace_blanco.png"), os.path.join(DESTINO, "casepace-blanco.png"))
@@ -72,5 +85,6 @@ if __name__ == "__main__":
     documentos()
     paginas()
     fundadores()
+    portada()
     logo()
     pdf()
