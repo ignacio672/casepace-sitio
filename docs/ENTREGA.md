@@ -4,27 +4,32 @@
 El plan original está en `docs/PLAN.md`; lo que cambió al construir está
 anotado acá, en "Decisiones que conviene revisar".
 
-## Cambio del 11 de noviembre: el inicio con la foto
+## Cambio del 11 de noviembre: el inicio
 
-El inicio ahora lleva la foto del I-589 que pasó Ignacio (`Cover.svg`), como
-una franja a todo el ancho apenas debajo de la barra, con el título y los dos
-llamados abajo, sobre el negro de la marca.
+El inicio lleva la foto del I-589 que pasó Ignacio (`Cover.svg`), y el producto
+escribe sobre ella: aparece lo que dijo la clienta, el resaltador citrón pasa
+sobre la parte que importa y la casilla de la Convención contra la Tortura
+queda tildada sobre el papel de verdad. Es el turno 18 del guion, el mismo
+gesto que el paso Interview.
 
-Antes la foto iba detrás del texto, entrando desde abajo a la derecha. No se
-podía subir más: el hueco negro de la foto es un triángulo ancho y bajo, y el
-bloque de texto es alto, así que al subirla la hoja le pasaba por encima al
-titular y a la nota. La franja resuelve eso sin degradados ni recuadros.
-
-- La foto y su máscara quedaron en `material/imagenes/portada/`. `npm run
-  imagenes` arma la versión con transparencia en `src/assets/portada/`, así
-  apoya sobre el negro de la marca y no sobre el negro del archivo original.
-- El elemento vivo (lo que dijo el cliente y lo que va al formulario) pasó a
-  ser la segunda sección, con "Every sentence traces back to something the
-  client said." como título. Esto reemplaza las decisiones 1 y 2 de más abajo
-  en lo que toca a la composición del inicio.
-- En el teléfono la franja se acerca al formulario, para que se lea.
+- La foto y su máscara están en `material/imagenes/portada/`. `npm run
+  imagenes` arma la versión con transparencia en `src/assets/portada/`, así el
+  papel apoya sobre el negro de la marca y no sobre el negro del archivo.
+- **La casilla está medida esquina por esquina sobre la foto** y la marca se
+  transforma con los dos ejes del plano del papel, no con un giro: la hoja está
+  en perspectiva. Los números están en `CASILLA`, en
+  `src/components/landing/HeroPaper.tsx`. Si alguna vez se cambia la foto, hay
+  que medirlos de nuevo.
+- El resaltador y el tilde van separados a propósito: el resaltador se
+  multiplica contra la foto, y un padre con `transform` le cortaría el fondo.
+- Los tiempos están en `src/lib/demo/paper.ts`.
+- Antes la foto iba detrás del texto y después como una franja suelta arriba.
+  Las dos quedaron mal: el hueco negro de la foto es un triángulo ancho y bajo
+  y el bloque de texto es alto, así que la hoja le pasaba por encima al
+  titular; y como franja era una imagen decorativa, que es justo lo que las
+  instrucciones no quieren.
 - A revisar: la foto muestra el encabezado real del I-589. Conviene confirmar
-  que se tienen los derechos de uso de esa foto.
+  que se tienen los derechos de uso.
 
 ## Qué hay
 

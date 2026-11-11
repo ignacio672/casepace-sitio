@@ -224,6 +224,12 @@ export const interviewUi = {
 
 /* ───────────────────────── El inicio ───────────────────────── */
 
+/**
+ * El turno que marca la casilla de la Convención contra la Tortura: el 18 del
+ * guion. Es el que escribe el formulario real en el inicio.
+ */
+export const paperTurn = { ...allTurns[17], number: 18 };
+
 /** Las dos frases del cliente del inicio: turnos 11 y 13 del guion. */
 export const heroSaid = [allTurns[10], allTurns[12]].map((turn) => ({ es: turn.es, en: turn.en }));
 
