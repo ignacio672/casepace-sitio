@@ -29,7 +29,7 @@ export function Phone({
       <div
         className={cn(
           "relative flex h-full flex-col overflow-hidden rounded-[26px]",
-          dark ? "bg-ink text-paper" : "bg-black text-ink",
+          dark ? "bg-phone text-paper" : "bg-black text-ink",
         )}
       >
         {!dark && <div className="absolute inset-0 rounded-[26px] bg-white" />}

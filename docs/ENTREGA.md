@@ -34,28 +34,40 @@ ese es el lugar donde mirar: densidad y ritmo, antes que color.
 ### Los colores
 
 **Toda la marca vive en variables**, en `:root` dentro de `src/index.css`, y
-Tailwind las toma de ahí (`ink`, `paper`, `accent`, `line`, `muted`). Cambiar
-la marca entera es cambiar ese bloque.
+Tailwind las toma de ahí (`ink`, `paper`, `accent`, `line`, `muted`, `phone`).
+Cambiar la marca entera es cambiar ese bloque.
 
-La paleta quedó así, después de probar cuatro temas en vivo:
+La paleta es **Celestial**, elegida después de probar cuatro temas en vivo:
 
 | | Valor | Dónde |
 |---|---|---|
-| Negro | `#121212` | Fondo del inicio, de la entrevista y del cierre |
-| Blanco cálido | `#F4F2EE` | Texto sobre negro y escenarios del producto |
-| **Ámbar** | `#FFBD24` | Botón principal y resaltador |
+| **Azul** | `#2323FF` | Franjas del inicio, la entrevista y el cierre, y todo el texto sobre blanco |
+| **Amarillo** | `#FFF224` | Botón principal y resaltador |
 | **Oliva** | `#6B6845` | Texto secundario sobre blanco |
-| Oliva claro | `#B4B09A` | Texto secundario sobre negro |
+| Azul claro | `#C3C3FF` | Texto secundario sobre el azul |
+| Blanco cálido | `#F4F2EE` | Texto sobre el azul y escenarios del producto |
+| Azul muy oscuro | `#14143A` | Pantalla del teléfono, para que las burbujas se despeguen |
 
-**El ámbar y el oliva vienen de la paleta Celestial y reemplazan al citrón
-`#E4F27A` del sitio publicado.** Es un cambio de marca, no solo del sitio: al
-mergear a Lovable hay que cambiarlos ahí también, o los dos se separan.
+**Esto reemplaza el negro y el citrón `#E4F27A` del sitio publicado.** Es un
+cambio de marca, no solo del sitio: al mergear a Lovable hay que cambiarlo ahí
+también, o los dos se separan. También cambian el favicon y el `theme-color`
+de `index.html`.
 
-El citrón quedó descartado por frío, y la paleta Celestial entera (azul
-`#2323FF` de fondo) también se probó: queda enérgica y de producto masivo, que
-es lo contrario de lo que el sitio necesita. El oliva de la paleta, `#807D52`,
-da 4,2:1 sobre blanco y no alcanza para texto chico; por eso se usa `#6B6845`,
-que da 5,1:1 sobre el blanco cálido. El negro sobre el ámbar da 11,2:1.
+Contrastes medidos, todos por encima del mínimo:
+
+- blanco cálido sobre el azul, 6,8:1;
+- texto secundario sobre el azul, 4,6:1;
+- azul sobre blanco, 6,9:1;
+- negro sobre el amarillo, 16:1;
+- el oliva de la paleta, `#807D52`, da 4,2:1 sobre blanco y no alcanza para
+  texto chico: se usa `#6B6845`, que da 5,1:1 sobre el blanco cálido.
+
+Se probaron y descartaron el citrón (frío) y el ámbar `#FFBD24` sobre base
+negra, que quedó documentado como "Celestial sobrio" en el historial.
+
+**Al tocar `tailwind.config.ts` hay que reiniciar `npm run dev`** y borrar
+`node_modules/.cache`: Tailwind guarda la configuración compilada y el
+servidor sigue sirviendo la vieja.
 
 ### La foto del I-589: probada y descartada
 

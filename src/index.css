@@ -64,22 +64,23 @@
      (ver tailwind.config.ts), así que cambiar la marca entera es cambiar
      estas líneas.
 
-     El acento es el ámbar de la paleta Celestial y el texto secundario es su
-     oliva, apenas oscurecido para llegar a 5,1:1 sobre el blanco cálido. El
-     sitio publicado todavía usa el citrón #E4F27A: al mergear a Lovable hay
-     que cambiarlo ahí también. */
+     Es la paleta Celestial: el azul manda y el amarillo es el acento, con el
+     oliva en el texto secundario. El sitio publicado todavía usa el negro y
+     el citrón #E4F27A: al mergear a Lovable hay que cambiarlo ahí también. */
   :root {
-    --ink: #121212;
-    --ink-raised: #1b1b1a;
-    --ink-bubble: #2c2c2a;
-    --ink-line: #30302d;
-    --ink-muted: #b4b09a;
+    --ink: #2323ff; /* el azul: texto, botones y fondo de las franjas */
+    --ink-raised: #1a1ad4; /* escenario sobre el azul */
+    --ink-bubble: #4a4aff; /* burbuja de Casepace en el teléfono */
+    --ink-line: #5a5aff; /* filetes sobre el azul */
+    --ink-muted: #c3c3ff; /* texto secundario sobre el azul */
+    --phone: #14143a; /* pantalla del teléfono: un azul muy oscuro, para que
+                         las burbujas se despeguen */
     --papel: #f4f2ee;
     --papel-deep: #ebe8e1;
-    --acento: #ffbd24;
-    --muted: #6b6845;
-    --linea: #e3e0d9;
-    --linea-fuerte: #c9c5bc;
+    --acento: #fff224;
+    --muted: #6b6845; /* texto secundario sobre blanco */
+    --linea: #e6e4da;
+    --linea-fuerte: #c9c5b4;
     --focus: var(--ink);
   }
 
@@ -147,7 +148,7 @@
     padding: 0.06em 0.12em;
     margin: 0 -0.12em;
     border-radius: 2px;
-    color: #121212;
+    color: var(--ink);
   }
   .mark-off {
     background-size: 0% 100%;
@@ -169,10 +170,10 @@
 
   /* Marcador de contenido pendiente. Se busca con data-pendiente. */
   .pending {
-    border: 1px dashed rgba(18, 18, 18, 0.5);
+    border: 1px dashed color-mix(in srgb, var(--ink) 50%, transparent);
     background: repeating-linear-gradient(
       -45deg,
-      rgba(18, 18, 18, 0.045) 0 6px,
+      color-mix(in srgb, var(--ink) 7%, transparent) 0 6px,
       transparent 6px 12px
     );
     border-radius: 3px;

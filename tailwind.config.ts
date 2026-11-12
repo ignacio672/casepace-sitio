@@ -1,11 +1,10 @@
 import type { Config } from "tailwindcss";
 
 /**
- * Marca de Casepace: negro #121212, blanco cálido #F4F2EE y, de acento,
- * ámbar #FFBD24, con el oliva #6B6845 en el texto secundario. El negro y el
- * blanco salen medidos del sitio publicado; el ámbar y el oliva vienen de la
- * paleta Celestial y reemplazan al citrón #E4F27A del sitio publicado, así
- * que hay que cambiarlos también en Lovable.
+ * Marca de Casepace, paleta Celestial: azul #2323FF, amarillo #FFF224 de
+ * acento, oliva #6B6845 en el texto secundario y blanco cálido #F4F2EE. El
+ * sitio publicado todavía usa negro y citrón, así que al mergear a Lovable
+ * hay que cambiarlo ahí también.
  *
  * Regla de formas, que se cumple en todo el sitio:
  *   papel del formulario 2 px · botones y campos 10 px · ventanas 12 px ·
@@ -30,6 +29,7 @@ export default {
           deep: "var(--papel-deep)",
         },
         accent: "var(--acento)",
+        phone: "var(--phone)", // pantalla del teléfono en el paso Interview
         line: {
           DEFAULT: "var(--linea)",
           strong: "var(--linea-fuerte)",
