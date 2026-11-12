@@ -1,8 +1,11 @@
 import type { Config } from "tailwindcss";
 
 /**
- * Marca de Casepace. Los tres colores salen medidos del sitio publicado:
- * negro #121212, blanco cálido #F4F2EE y citrón #E4F27A.
+ * Marca de Casepace: negro #121212, blanco cálido #F4F2EE y, de acento,
+ * ámbar #FFBD24, con el oliva #6B6845 en el texto secundario. El negro y el
+ * blanco salen medidos del sitio publicado; el ámbar y el oliva vienen de la
+ * paleta Celestial y reemplazan al citrón #E4F27A del sitio publicado, así
+ * que hay que cambiarlos también en Lovable.
  *
  * Regla de formas, que se cumple en todo el sitio:
  *   papel del formulario 2 px · botones y campos 10 px · ventanas 12 px ·
@@ -26,7 +29,7 @@ export default {
           DEFAULT: "var(--papel)", // escenarios y texto sobre el fondo oscuro
           deep: "var(--papel-deep)",
         },
-        citron: "var(--acento)",
+        accent: "var(--acento)",
         line: {
           DEFAULT: "var(--linea)",
           strong: "var(--linea-fuerte)",

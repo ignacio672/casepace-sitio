@@ -78,7 +78,7 @@ export function Nav() {
         </nav>
         <div className="ml-auto flex items-center gap-3">
           <AudienceSwitch className="hidden md:flex" />
-          <a href={WALKTHROUGH_HREF} className={buttonClass({ variant: "citron", size: "sm" })}>
+          <a href={WALKTHROUGH_HREF} className={buttonClass({ variant: "accent", size: "sm" })}>
             {nav.walkthrough}
           </a>
           <button

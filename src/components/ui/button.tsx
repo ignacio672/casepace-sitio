@@ -1,7 +1,7 @@
 import { forwardRef, type ButtonHTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
 
-type Variant = "citron" | "paper" | "ghostDark" | "ink" | "outline";
+type Variant = "accent" | "paper" | "ghostDark" | "ink" | "outline";
 type Size = "md" | "sm";
 
 const base =
@@ -11,7 +11,7 @@ const base =
 
 const variants: Record<Variant, string> = {
   // El citrón es del botón principal y de nada más.
-  citron: "bg-citron text-ink hover:brightness-[1.07]",
+  accent: "bg-accent text-ink hover:brightness-[1.07]",
   paper: "bg-paper text-ink hover:bg-white",
   ghostDark: "border border-paper/30 text-paper hover:border-paper/70 hover:bg-paper/[0.06]",
   ink: "bg-ink text-paper hover:brightness-[1.35]",

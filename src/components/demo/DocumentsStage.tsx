@@ -193,7 +193,7 @@ function SourceStrip({
         {/* El resaltador se mueve con transform, así no cuenta como salto de diseño. */}
         {box && (
           <span
-            className="absolute inset-0 origin-top-left bg-citron mix-blend-multiply [transition:transform_80ms_linear]"
+            className="absolute inset-0 origin-top-left bg-accent mix-blend-multiply [transition:transform_80ms_linear]"
             style={{ transform: `translate(${box.x}%, ${box.y}%) scale(${box.w / 100}, ${box.h / 100})` }}
           />
         )}

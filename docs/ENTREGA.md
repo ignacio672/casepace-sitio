@@ -31,35 +31,31 @@ ese es el lugar donde mirar: densidad y ritmo, antes que color.
   sentence traces back to something the client said." quedó como pie del
   inicio.
 
-### Los colores, y los temas de prueba
+### Los colores
 
 **Toda la marca vive en variables**, en `:root` dentro de `src/index.css`, y
-Tailwind las toma de ahí (`ink`, `paper`, `citron`, `line`, `muted`). Cambiar
-el tema entero del sitio es cambiar ese bloque. Conviene hacerlo también en
-Lovable, o los dos sitios se separan antes del merge.
+Tailwind las toma de ahí (`ink`, `paper`, `accent`, `line`, `muted`). Cambiar
+la marca entera es cambiar ese bloque.
 
-Para elegir mirando hay un selector en `src/components/site/TemaSwitch.tsx`,
-abajo a la izquierda. **Solo aparece con `npm run dev`**: el build lo deja
-afuera. Cuando el tema esté decidido, sus valores pasan a `:root` y se borran
-el selector, las dos líneas que lo usan en `Layout.tsx` y los bloques
-`[data-tema]` del final de `src/index.css`.
+La paleta quedó así, después de probar cuatro temas en vivo:
 
-Los cuatro temas:
-
-| Tema | Qué cambia | Cómo queda |
+| | Valor | Dónde |
 |---|---|---|
-| **Casepace** | Negro, blanco cálido, citrón `#E4F27A` | El de hoy, medido del sitio publicado |
-| **Mostaza** | Solo el acento, a `#F2C14E` | Más cálido y más serio, sigue siendo resaltador |
-| **Celestial sobrio** | Acento ámbar `#FFBD24` y texto secundario oliva | Usa la paleta Celestial sin perder la base seria |
-| **Celestial** | La paleta entera: azul `#2323FF` de fondo, amarillo `#FFF224` de acento | Enérgico, de producto masivo |
+| Negro | `#121212` | Fondo del inicio, de la entrevista y del cierre |
+| Blanco cálido | `#F4F2EE` | Texto sobre negro y escenarios del producto |
+| **Ámbar** | `#FFBD24` | Botón principal y resaltador |
+| **Oliva** | `#6B6845` | Texto secundario sobre blanco |
+| Oliva claro | `#B4B09A` | Texto secundario sobre negro |
 
-Contraste de los pares que importan, todos medidos:
+**El ámbar y el oliva vienen de la paleta Celestial y reemplazan al citrón
+`#E4F27A` del sitio publicado.** Es un cambio de marca, no solo del sitio: al
+mergear a Lovable hay que cambiarlos ahí también, o los dos se separan.
 
-- texto blanco sobre el azul, 6,8:1;
-- texto secundario sobre el azul, 4,6:1;
-- negro sobre el amarillo y sobre el ámbar, 16:1 y 11,2:1;
-- el oliva de la paleta, `#807D52`, da 4,2:1 sobre blanco y no alcanza para
-  texto chico: en los temas se usa `#6B6845`, que da 5,7:1.
+El citrón quedó descartado por frío, y la paleta Celestial entera (azul
+`#2323FF` de fondo) también se probó: queda enérgica y de producto masivo, que
+es lo contrario de lo que el sitio necesita. El oliva de la paleta, `#807D52`,
+da 4,2:1 sobre blanco y no alcanza para texto chico; por eso se usa `#6B6845`,
+que da 5,1:1 sobre el blanco cálido. El negro sobre el ámbar da 11,2:1.
 
 ### La foto del I-589: probada y descartada
 
