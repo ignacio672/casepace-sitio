@@ -11,10 +11,10 @@ const base =
 
 const variants: Record<Variant, string> = {
   // El citrón es del botón principal y de nada más.
-  citron: "bg-citron text-ink hover:bg-[#EDF99B]",
+  citron: "bg-citron text-ink hover:brightness-[1.07]",
   paper: "bg-paper text-ink hover:bg-white",
   ghostDark: "border border-paper/30 text-paper hover:border-paper/70 hover:bg-paper/[0.06]",
-  ink: "bg-ink text-paper hover:bg-[#2B2B29]",
+  ink: "bg-ink text-paper hover:brightness-[1.35]",
   outline: "border border-line-strong text-ink hover:border-ink",
 };
 

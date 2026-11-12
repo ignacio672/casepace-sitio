@@ -13,24 +13,25 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Los valores viven en src/index.css, como variables, para poder
+        // cambiar el tema entero desde un solo lugar.
         ink: {
-          DEFAULT: "#121212",
-          raised: "#1B1B1A", // escenario sobre negro
-          bubble: "#2C2C2A", // burbuja de Casepace en el teléfono oscuro
-          line: "#30302D", // filetes sobre negro
-          muted: "#A7A39A", // texto secundario sobre negro
+          DEFAULT: "var(--ink)",
+          raised: "var(--ink-raised)", // escenario sobre el fondo oscuro
+          bubble: "var(--ink-bubble)", // burbuja de Casepace en el teléfono
+          line: "var(--ink-line)", // filetes sobre el fondo oscuro
+          muted: "var(--ink-muted)", // texto secundario sobre el fondo oscuro
         },
         paper: {
-          DEFAULT: "#F4F2EE", // blanco cálido: escenarios y texto sobre negro
-          deep: "#EBE8E1",
+          DEFAULT: "var(--papel)", // escenarios y texto sobre el fondo oscuro
+          deep: "var(--papel-deep)",
         },
-        // El valor vive en --acento, en src/index.css.
         citron: "var(--acento)",
         line: {
-          DEFAULT: "#E3E0D9",
-          strong: "#C9C5BC",
+          DEFAULT: "var(--linea)",
+          strong: "var(--linea-fuerte)",
         },
-        muted: "#66635C", // texto secundario sobre blanco, AA
+        muted: "var(--muted)", // texto secundario sobre blanco, AA
         danger: "#A3271B",
       },
       fontFamily: {

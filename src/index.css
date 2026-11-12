@@ -60,10 +60,22 @@
 }
 
 @layer base {
+  /* Los colores de la marca, en un solo lugar. Tailwind los toma de acá
+     (ver tailwind.config.ts), así que cambiar un tema es cambiar estas
+     líneas. Los temas de prueba están más abajo, fuera de la capa base. */
   :root {
-    --focus: #121212;
-    /* El acento de la marca. Está acá solo, para poder cambiarlo de una vez. */
+    --ink: #121212;
+    --ink-raised: #1b1b1a;
+    --ink-bubble: #2c2c2a;
+    --ink-line: #30302d;
+    --ink-muted: #a7a39a;
+    --papel: #f4f2ee;
+    --papel-deep: #ebe8e1;
     --acento: #e4f27a;
+    --muted: #66635c;
+    --linea: #e3e0d9;
+    --linea-fuerte: #c9c5bc;
+    --focus: var(--ink);
   }
 
   html {
@@ -115,7 +127,7 @@
 
   /* Las franjas negras cambian el color del foco. */
   .on-dark {
-    --focus: #f4f2ee;
+    --focus: var(--papel);
     @apply bg-ink text-paper;
   }
 
@@ -202,4 +214,37 @@
     transition-duration: 0.01ms !important;
     transition-delay: 0ms !important;
   }
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   Temas de prueba
+   Se eligen con el selector de desarrollo (ColorSwitch) y no viajan al build.
+   Cuando haya uno elegido, sus valores pasan a :root y esto se borra.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* Casepace con el acento mostaza. */
+[data-tema="mostaza"] {
+  --acento: #f2c14e;
+}
+
+/* Celestial sobrio: la base de siempre, con el ámbar y el oliva de la paleta. */
+[data-tema="celestial-sobrio"] {
+  --acento: #ffbd24;
+  /* El oliva de la paleta, apenas más oscuro: el #807D52 queda en 4,2:1 sobre
+     blanco y el texto secundario necesita 4,5:1. */
+  --muted: #6b6845;
+  --ink-muted: #b4b09a;
+}
+
+/* Celestial: la paleta entera, con el azul como fondo oscuro. */
+[data-tema="celestial"] {
+  --ink: #2323ff;
+  --ink-raised: #1c1ce0;
+  --ink-bubble: #4040ff;
+  --ink-line: #5555ff;
+  --ink-muted: #c3c3ff;
+  --acento: #fff224;
+  --muted: #6b6845;
+  --linea: #e6e4da;
+  --linea-fuerte: #c9c5b4;
 }

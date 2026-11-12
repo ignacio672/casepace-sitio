@@ -31,28 +31,35 @@ ese es el lugar donde mirar: densidad y ritmo, antes que color.
   sentence traces back to something the client said." quedó como pie del
   inicio.
 
-### El color del acento
+### Los colores, y los temas de prueba
 
-El citrón ahora vive en **una sola variable**, `--acento`, en `src/index.css`.
-Tailwind lo toma de ahí (`citron: "var(--acento)"`), así que cambiar el acento
-de todo el sitio es cambiar esa línea. Conviene hacerlo también en Lovable, o
-los dos sitios se separan antes del merge.
+**Toda la marca vive en variables**, en `:root` dentro de `src/index.css`, y
+Tailwind las toma de ahí (`ink`, `paper`, `citron`, `line`, `muted`). Cambiar
+el tema entero del sitio es cambiar ese bloque. Conviene hacerlo también en
+Lovable, o los dos sitios se separan antes del merge.
 
-Para elegirlo mirándolo hay un selector en
-`src/components/site/ColorSwitch.tsx`, abajo a la izquierda. **Solo aparece con
-`npm run dev`**: el build lo deja afuera. Cuando el color esté decidido, se
-escribe en `--acento` y ese archivo se borra, junto con las dos líneas que lo
-usan en `Layout.tsx`.
+Para elegir mirando hay un selector en `src/components/site/TemaSwitch.tsx`,
+abajo a la izquierda. **Solo aparece con `npm run dev`**: el build lo deja
+afuera. Cuando el tema esté decidido, sus valores pasan a `:root` y se borran
+el selector, las dos líneas que lo usan en `Layout.tsx` y los bloques
+`[data-tema]` del final de `src/index.css`.
 
-Probamos cuatro, con el contraste del texto negro encima:
+Los cuatro temas:
 
-| Color | Contraste | Cómo queda |
+| Tema | Qué cambia | Cómo queda |
 |---|---|---|
-| Citrón `#E4F27A` (el de hoy) | 15,4:1 | Es literalmente un resaltador. Es la marca, medida del sitio publicado |
-| Mostaza `#F2C14E` | 11,2:1 | Más cálido y más serio, sigue leyéndose como resaltador |
-| Ámbar `#FFB020` | 9,3:1 | Más presente que el mostaza, sigue siendo resaltador |
-| Naranja `#FF7A45` | 7,2:1 | Más llamativo, se va para el lado del consumo masivo |
-| Bermellón `#C0402B` | 3,6:1 | No sirve: el botón necesitaría texto blanco, y el rojo sobre un dato se lee como error, no como origen |
+| **Casepace** | Negro, blanco cálido, citrón `#E4F27A` | El de hoy, medido del sitio publicado |
+| **Mostaza** | Solo el acento, a `#F2C14E` | Más cálido y más serio, sigue siendo resaltador |
+| **Celestial sobrio** | Acento ámbar `#FFBD24` y texto secundario oliva | Usa la paleta Celestial sin perder la base seria |
+| **Celestial** | La paleta entera: azul `#2323FF` de fondo, amarillo `#FFF224` de acento | Enérgico, de producto masivo |
+
+Contraste de los pares que importan, todos medidos:
+
+- texto blanco sobre el azul, 6,8:1;
+- texto secundario sobre el azul, 4,6:1;
+- negro sobre el amarillo y sobre el ámbar, 16:1 y 11,2:1;
+- el oliva de la paleta, `#807D52`, da 4,2:1 sobre blanco y no alcanza para
+  texto chico: en los temas se usa `#6B6845`, que da 5,7:1.
 
 ### La foto del I-589: probada y descartada
 
