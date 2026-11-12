@@ -38,12 +38,19 @@ Tailwind lo toma de ahí (`citron: "var(--acento)"`), así que cambiar el acento
 de todo el sitio es cambiar esa línea. Conviene hacerlo también en Lovable, o
 los dos sitios se separan antes del merge.
 
+Para elegirlo mirándolo hay un selector en
+`src/components/site/ColorSwitch.tsx`, abajo a la izquierda. **Solo aparece con
+`npm run dev`**: el build lo deja afuera. Cuando el color esté decidido, se
+escribe en `--acento` y ese archivo se borra, junto con las dos líneas que lo
+usan en `Layout.tsx`.
+
 Probamos cuatro, con el contraste del texto negro encima:
 
 | Color | Contraste | Cómo queda |
 |---|---|---|
 | Citrón `#E4F27A` (el de hoy) | 15,4:1 | Es literalmente un resaltador. Es la marca, medida del sitio publicado |
 | Mostaza `#F2C14E` | 11,2:1 | Más cálido y más serio, sigue leyéndose como resaltador |
+| Ámbar `#FFB020` | 9,3:1 | Más presente que el mostaza, sigue siendo resaltador |
 | Naranja `#FF7A45` | 7,2:1 | Más llamativo, se va para el lado del consumo masivo |
 | Bermellón `#C0402B` | 3,6:1 | No sirve: el botón necesitaría texto blanco, y el rojo sobre un dato se lee como error, no como origen |
 

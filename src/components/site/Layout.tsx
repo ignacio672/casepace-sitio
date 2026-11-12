@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import { ColorSwitch } from "./ColorSwitch";
 import { Footer } from "./Footer";
 import { Nav } from "./Nav";
 import { ScrollManager } from "./ScrollManager";
@@ -16,6 +17,8 @@ export function Layout() {
         <Outlet />
       </main>
       <Footer />
+      {/* Herramienta de trabajo: el build la deja afuera. */}
+      {import.meta.env.DEV && <ColorSwitch />}
     </>
   );
 }
