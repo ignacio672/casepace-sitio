@@ -6,16 +6,21 @@ anotado acá, en "Decisiones que conviene revisar".
 
 ## El inicio: la pantalla de revisión
 
-Después de probar y descartar la foto del I-589, el inicio quedó así: arriba el
-título, el texto y los dos llamados; debajo, a todo el ancho, **la pantalla con
-la que el estudio revisa el caso**. Las filas del formulario se completan de a
-una y cada una muestra de dónde salió, un documento o la entrevista. Al
-costado, las partes del formulario que se van cerrando y las cifras reales del
-caso de muestra.
+Arriba el título, el texto y los dos llamados. Debajo, a todo el ancho, **la
+pantalla con la que el estudio revisa el caso**: cinco campos del formulario
+que se completan de a uno, cada uno con el documento o la entrevista de donde
+salió. El último es lo que contó la clienta.
 
 Es la dirección que usan los sitios más cercanos al rubro (Harvey, Linear): el
 producto como imagen, no una foto. Y es lo que piden las instrucciones cuando
 hablan de un elemento vivo del producto.
+
+**El inicio está hecho para leerse despacio.** La primera versión era correcta
+y fría: mucha densidad, tipografía chica y una animación rápida. Se corrigió
+con escala y aire, no con más elementos: titular más grande, menos cosas en la
+primera pantalla, cinco filas en vez de ocho, y el ritmo de la animación casi
+al doble de lento (950 ms por fila). Si alguna vez se vuelve a sentir frío,
+ese es el lugar donde mirar: densidad y ritmo, antes que color.
 
 - Componente: `src/components/landing/HeroWindow.tsx`. Tiempos en
   `src/lib/demo/review.ts`, filas en `src/content/sampleCase.ts`
@@ -25,6 +30,22 @@ hablan de un elemento vivo del producto.
   formulario", que hacían el mismo gesto dos veces. La frase aprobada "Every
   sentence traces back to something the client said." quedó como pie del
   inicio.
+
+### El color del acento
+
+El citrón ahora vive en **una sola variable**, `--acento`, en `src/index.css`.
+Tailwind lo toma de ahí (`citron: "var(--acento)"`), así que cambiar el acento
+de todo el sitio es cambiar esa línea. Conviene hacerlo también en Lovable, o
+los dos sitios se separan antes del merge.
+
+Probamos cuatro, con el contraste del texto negro encima:
+
+| Color | Contraste | Cómo queda |
+|---|---|---|
+| Citrón `#E4F27A` (el de hoy) | 15,4:1 | Es literalmente un resaltador. Es la marca, medida del sitio publicado |
+| Mostaza `#F2C14E` | 11,2:1 | Más cálido y más serio, sigue leyéndose como resaltador |
+| Naranja `#FF7A45` | 7,2:1 | Más llamativo, se va para el lado del consumo masivo |
+| Bermellón `#C0402B` | 3,6:1 | No sirve: el botón necesitaría texto blanco, y el rojo sobre un dato se lee como error, no como origen |
 
 ### La foto del I-589: probada y descartada
 

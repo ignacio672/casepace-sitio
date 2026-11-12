@@ -62,6 +62,8 @@
 @layer base {
   :root {
     --focus: #121212;
+    /* El acento de la marca. Está acá solo, para poder cambiarlo de una vez. */
+    --acento: #e4f27a;
   }
 
   html {
@@ -84,7 +86,7 @@
   }
 
   ::selection {
-    background: #e4f27a;
+    background: var(--acento);
     color: #121212;
   }
 
@@ -119,7 +121,7 @@
 
   /* El resaltador: pasa sobre el texto de izquierda a derecha. */
   .mark {
-    background-image: linear-gradient(#e4f27a, #e4f27a);
+    background-image: linear-gradient(var(--acento), var(--acento));
     background-repeat: no-repeat;
     background-position: 0 0;
     background-size: 100% 100%;
@@ -140,12 +142,12 @@
   /* El resaltador que pasa una vez sobre un dato recién escrito y se apaga.
      Entra por la izquierda y sale por la derecha. */
   .mark-pass {
-    background-image: linear-gradient(#e4f27a, #e4f27a);
+    background-image: linear-gradient(var(--acento), var(--acento));
     background-repeat: no-repeat;
     background-size: 0% 100%;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
-    animation: mark-pass 560ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: mark-pass 820ms cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
   /* Marcador de contenido pendiente. Se busca con data-pendiente. */

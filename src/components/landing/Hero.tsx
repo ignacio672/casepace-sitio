@@ -12,20 +12,20 @@ import { HeroWindow } from "./HeroWindow";
 export function Hero({ content }: { content: LandingContent["hero"] }) {
   return (
     <section className="on-dark">
-      <div className="wrap pb-20 pt-12 sm:pt-14 xl:pb-24 xl:pt-14">
-        <p className="animate-hero-in pb-0.5 font-serif text-[19px] italic leading-[1.3] text-paper/70 sm:text-[21px]">
+      <div className="wrap pb-24 pt-14 sm:pt-20 xl:pb-32 xl:pt-24">
+        <p className="animate-hero-in pb-0.5 font-serif text-[21px] italic leading-[1.3] text-paper/70 sm:text-[23px]">
           {content.label}
         </p>
-        <h1 className="mt-4 max-w-[48rem] animate-hero-in font-serif text-[clamp(1.7rem,7.5vw,3.75rem)] font-normal leading-[1.05] tracking-[-0.02em] xl:text-[clamp(3.25rem,4.4vw,3.6875rem)]">
+        <h1 className="mt-5 max-w-[52rem] animate-hero-in font-serif text-[clamp(1.85rem,8vw,4.25rem)] font-normal leading-[1.04] tracking-[-0.02em] xl:text-[clamp(3.5rem,5vw,4.5rem)]">
           {content.title.map((line) => (
             <span key={line} className="block">
               {line}{" "}
             </span>
           ))}
         </h1>
-        <div className="mt-8 grid gap-x-12 gap-y-8 lg:grid-cols-12 xl:mt-10">
+        <div className="mt-10 grid gap-x-12 gap-y-9 lg:grid-cols-12 xl:mt-12">
           <p
-            className="max-w-[33rem] animate-hero-in text-[18px] leading-[1.55] text-paper/80 lg:col-span-6 xl:text-[19px]"
+            className="max-w-[34rem] animate-hero-in text-[19px] leading-[1.6] text-paper/80 lg:col-span-6 xl:text-[21px]"
             style={{ animationDelay: "70ms" }}
           >
             {content.text}
@@ -40,12 +40,14 @@ export function Hero({ content }: { content: LandingContent["hero"] }) {
                 {nav.walkthrough}
               </a>
             </div>
-            <p className="mt-6 max-w-[27rem] text-[14.5px] leading-[1.5] text-ink-muted">{content.note}</p>
           </div>
         </div>
 
-        <HeroWindow className="mt-12 animate-hero-in xl:mt-14" />
-        <p className="mt-5 text-[14.5px] leading-[1.5] text-ink-muted">{shared.hero.caption}</p>
+        <HeroWindow className="mt-16 animate-hero-in xl:mt-20" />
+        <div className="mt-7 flex flex-col gap-x-12 gap-y-3 text-[14.5px] leading-[1.5] text-ink-muted lg:flex-row lg:items-baseline lg:justify-between">
+          <p>{shared.hero.caption}</p>
+          <p className="max-w-[31rem] lg:text-right">{content.note}</p>
+        </div>
       </div>
     </section>
   );

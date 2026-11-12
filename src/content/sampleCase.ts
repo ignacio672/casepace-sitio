@@ -178,14 +178,7 @@ function fromDoc(docId: CaseDocument["id"], fieldId: string, part: number): Revi
   return { ref: field.ref, label: field.label, value: field.value, source: doc.tag, part };
 }
 
-export const reviewParts = [
-  "Part A.I · Applicant",
-  "Part A.II · Spouse and children",
-  "Part B · Application",
-];
-
 export const reviewUi = {
-  parts: "Form parts",
   field: "Field",
   source: "Source",
   /** Las cifras reales del PDF del caso, en la barra lateral. */
@@ -264,12 +257,8 @@ export const interviewUi = {
  */
 export const reviewRows: ReviewRow[] = [
   fromDoc("pasaporte", "4", 0),
-  fromDoc("pasaporte", "23", 0),
-  fromDoc("matrimonio", "22", 0),
-  fromDoc("i94", "32.1.1", 0),
-  fromDoc("nac_santiago", "72.1", 1),
-
   fromDoc("matrimonio", "50", 1),
+  fromDoc("i94", "32.1.1", 0),
   { ref: "B.1", label: "Political opinion", value: "Yes", source: interviewUi.team.tag, part: 2 },
   {
     ref: "B.1.A",

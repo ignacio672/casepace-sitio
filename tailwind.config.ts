@@ -24,7 +24,8 @@ export default {
           DEFAULT: "#F4F2EE", // blanco cálido: escenarios y texto sobre negro
           deep: "#EBE8E1",
         },
-        citron: "#E4F27A",
+        // El valor vive en --acento, en src/index.css.
+        citron: "var(--acento)",
         line: {
           DEFAULT: "#E3E0D9",
           strong: "#C9C5BC",
