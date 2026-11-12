@@ -158,6 +158,42 @@ export const documentsUi = {
   team: { list: "Documents", reading: "Reading", done: "Done" },
 };
 
+/* ───────────────────────── El inicio: la revisión ───────────────────────── */
+
+export type ReviewRow = {
+  /** Parte y número de ítem en el I-589. */
+  ref: string;
+  label: string;
+  value: string;
+  /** De dónde salió. */
+  source: string;
+  /** A qué parte del formulario pertenece, para la lista de la izquierda. */
+  part: number;
+};
+
+/** Un campo de un documento, tal como ya está cargado, con su parte. */
+function fromDoc(docId: CaseDocument["id"], fieldId: string, part: number): ReviewRow {
+  const doc = documents.find((d) => d.id === docId)!;
+  const field = doc.fields.find((f) => f.id === fieldId)!;
+  return { ref: field.ref, label: field.label, value: field.value, source: doc.tag, part };
+}
+
+export const reviewParts = [
+  "Part A.I · Applicant",
+  "Part A.II · Spouse and children",
+  "Part B · Application",
+];
+
+export const reviewUi = {
+  parts: "Form parts",
+  field: "Field",
+  source: "Source",
+  /** Las cifras reales del PDF del caso, en la barra lateral. */
+  counts: ["202 answers", "53 checkboxes", "109 blanks marked N/A"],
+  description:
+    "Animation. In the team's view of María's case, the form fields fill in one by one, each with the document or the interview it came from.",
+};
+
 /* ───────────────────────── Paso 2 · Interview ───────────────────────── */
 
 export type Turn = { de: "asistente" | "solicitante"; es: string; en: string };
@@ -221,6 +257,28 @@ export const interviewUi = {
     ],
   },
 };
+
+/**
+ * Lo que se ve en el inicio. Las filas de documentos salen de los mismos datos
+ * que el paso Documents; las de la entrevista, del guion.
+ */
+export const reviewRows: ReviewRow[] = [
+  fromDoc("pasaporte", "4", 0),
+  fromDoc("pasaporte", "23", 0),
+  fromDoc("matrimonio", "22", 0),
+  fromDoc("i94", "32.1.1", 0),
+  fromDoc("nac_santiago", "72.1", 1),
+
+  fromDoc("matrimonio", "50", 1),
+  { ref: "B.1", label: "Political opinion", value: "Yes", source: interviewUi.team.tag, part: 2 },
+  {
+    ref: "B.1.A",
+    label: "Harm or mistreatment in the past",
+    value: interviewUi.team.sentences[0],
+    source: interviewUi.team.tag,
+    part: 2,
+  },
+];
 
 /* ───────────────────────── El inicio ───────────────────────── */
 

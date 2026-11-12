@@ -4,15 +4,34 @@
 El plan original está en `docs/PLAN.md`; lo que cambió al construir está
 anotado acá, en "Decisiones que conviene revisar".
 
-## La foto del I-589: probada y descartada
+## El inicio: la pantalla de revisión
 
-El 11 de noviembre probamos la foto del I-589 que pasó Ignacio (`Cover.svg`)
-en el inicio, de tres maneras: detrás del texto, como franja a todo el ancho, y
-como papel vivo con la casilla de la Convención contra la Tortura tildándose
-sobre la hoja. Las tres quedaron mal y se sacaron. El inicio volvió al
-elemento vivo del producto.
+Después de probar y descartar la foto del I-589, el inicio quedó así: arriba el
+título, el texto y los dos llamados; debajo, a todo el ancho, **la pantalla con
+la que el estudio revisa el caso**. Las filas del formulario se completan de a
+una y cada una muestra de dónde salió, un documento o la entrevista. Al
+costado, las partes del formulario que se van cerrando y las cifras reales del
+caso de muestra.
 
-Queda anotado para no repetirlo:
+Es la dirección que usan los sitios más cercanos al rubro (Harvey, Linear): el
+producto como imagen, no una foto. Y es lo que piden las instrucciones cuando
+hablan de un elemento vivo del producto.
+
+- Componente: `src/components/landing/HeroWindow.tsx`. Tiempos en
+  `src/lib/demo/review.ts`, filas en `src/content/sampleCase.ts`
+  (`reviewRows`), armadas con los mismos datos del paso Documents y la misma
+  frase que escribe el paso Interview.
+- Se fueron `HeroLive` y la sección "Lo que dijo el cliente y lo que va al
+  formulario", que hacían el mismo gesto dos veces. La frase aprobada "Every
+  sentence traces back to something the client said." quedó como pie del
+  inicio.
+
+### La foto del I-589: probada y descartada
+
+Probamos la foto de tres maneras: detrás del texto, como franja a todo el ancho
+y como papel vivo con la casilla tildándose sobre la hoja. Las tres quedaron
+mal. Queda anotado para no repetirlo:
+
 - **Detrás del texto no entra.** El hueco negro de la foto es un triángulo
   ancho y bajo, y el bloque de texto es alto: la hoja le pasa por encima al
   titular a cualquier escala que deje el título del formulario entero.
@@ -20,9 +39,17 @@ Queda anotado para no repetirlo:
   quieren.
 - **El material sigue en el repositorio** por si vuelve: la foto y su máscara
   en `material/imagenes/portada/`, y `portada()` en
-  `scripts/preparar_imagenes.py`, que ya no se llama. Si vuelve, la casilla
-  está medida esquina por esquina en el historial, en el commit `fed8537`.
+  `scripts/preparar_imagenes.py`, que ya no se llama. La casilla quedó medida
+  esquina por esquina en el commit `fed8537`.
 - Si alguna vez se usa, hay que confirmar los derechos de uso de la foto.
+
+### El video de archivo
+
+También probamos un GIF de archivo (manos con un teléfono) en horizontal y
+vertical. No va: es metraje de archivo, que las instrucciones prohíben, no
+muestra el producto, trae un cuarto color y en el teléfono se come la primera
+pantalla. Convertido a MP4 pesa 389 KB y 332 KB, y sirve para redes, que es
+para lo que estaba hecho.
 
 ## Qué hay
 
