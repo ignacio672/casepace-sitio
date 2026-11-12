@@ -57,7 +57,9 @@ def fundadores():
 
 
 def portada():
-    """La foto del I-589 del inicio, recortada con su máscara para que apoye sobre el negro de la marca."""
+    """Sin uso hoy: el inicio no lleva foto. Queda por si vuelve.
+
+    La foto del I-589, recortada con su máscara para que apoye sobre el negro de la marca."""
     from PIL import ImageChops
 
     foto = Image.open(os.path.join(ORIGEN, "portada", "i589_foto.png")).convert("RGBA")
@@ -85,6 +87,5 @@ if __name__ == "__main__":
     documentos()
     paginas()
     fundadores()
-    portada()
     logo()
     pdf()

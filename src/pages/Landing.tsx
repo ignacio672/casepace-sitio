@@ -3,7 +3,6 @@ import { Closing } from "@/components/landing/Closing";
 import { Hero } from "@/components/landing/Hero";
 import { Problem } from "@/components/landing/Problem";
 import { Questions } from "@/components/landing/Questions";
-import { SaidToForm } from "@/components/landing/SaidToForm";
 import { SampleCase } from "@/components/landing/SampleCase";
 import { WhoFor } from "@/components/landing/WhoFor";
 import { WhoWeAre } from "@/components/landing/WhoWeAre";
@@ -19,7 +18,6 @@ export default function Landing({ audience }: { audience: Audience }) {
   return (
     <>
       <Hero content={content.hero} />
-      <SaidToForm />
       <Problem content={content.problem} />
       <SampleCase audience={audience} />
       <AiSection />

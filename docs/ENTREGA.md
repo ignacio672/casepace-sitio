@@ -4,32 +4,25 @@
 El plan original está en `docs/PLAN.md`; lo que cambió al construir está
 anotado acá, en "Decisiones que conviene revisar".
 
-## Cambio del 11 de noviembre: el inicio
+## La foto del I-589: probada y descartada
 
-El inicio lleva la foto del I-589 que pasó Ignacio (`Cover.svg`), y el producto
-escribe sobre ella: aparece lo que dijo la clienta, el resaltador citrón pasa
-sobre la parte que importa y la casilla de la Convención contra la Tortura
-queda tildada sobre el papel de verdad. Es el turno 18 del guion, el mismo
-gesto que el paso Interview.
+El 11 de noviembre probamos la foto del I-589 que pasó Ignacio (`Cover.svg`)
+en el inicio, de tres maneras: detrás del texto, como franja a todo el ancho, y
+como papel vivo con la casilla de la Convención contra la Tortura tildándose
+sobre la hoja. Las tres quedaron mal y se sacaron. El inicio volvió al
+elemento vivo del producto.
 
-- La foto y su máscara están en `material/imagenes/portada/`. `npm run
-  imagenes` arma la versión con transparencia en `src/assets/portada/`, así el
-  papel apoya sobre el negro de la marca y no sobre el negro del archivo.
-- **La casilla está medida esquina por esquina sobre la foto** y la marca se
-  transforma con los dos ejes del plano del papel, no con un giro: la hoja está
-  en perspectiva. Los números están en `CASILLA`, en
-  `src/components/landing/HeroPaper.tsx`. Si alguna vez se cambia la foto, hay
-  que medirlos de nuevo.
-- El resaltador y el tilde van separados a propósito: el resaltador se
-  multiplica contra la foto, y un padre con `transform` le cortaría el fondo.
-- Los tiempos están en `src/lib/demo/paper.ts`.
-- Antes la foto iba detrás del texto y después como una franja suelta arriba.
-  Las dos quedaron mal: el hueco negro de la foto es un triángulo ancho y bajo
-  y el bloque de texto es alto, así que la hoja le pasaba por encima al
-  titular; y como franja era una imagen decorativa, que es justo lo que las
-  instrucciones no quieren.
-- A revisar: la foto muestra el encabezado real del I-589. Conviene confirmar
-  que se tienen los derechos de uso.
+Queda anotado para no repetirlo:
+- **Detrás del texto no entra.** El hueco negro de la foto es un triángulo
+  ancho y bajo, y el bloque de texto es alto: la hoja le pasa por encima al
+  titular a cualquier escala que deje el título del formulario entero.
+- **Como franja es decoración,** que es justo lo que las instrucciones no
+  quieren.
+- **El material sigue en el repositorio** por si vuelve: la foto y su máscara
+  en `material/imagenes/portada/`, y `portada()` en
+  `scripts/preparar_imagenes.py`, que ya no se llama. Si vuelve, la casilla
+  está medida esquina por esquina en el historial, en el commit `fed8537`.
+- Si alguna vez se usa, hay que confirmar los derechos de uso de la foto.
 
 ## Qué hay
 

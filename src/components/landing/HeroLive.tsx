@@ -94,7 +94,7 @@ function Typing() {
  * frase del cliente. El citrón marca la frase de origen y, en el mismo momento,
  * pasa sobre la frase que llega al formulario.
  */
-export function HeroLive({ className, bare = false }: { className?: string; bare?: boolean }) {
+export function HeroLive({ className }: { className?: string }) {
   const stage = useStage(0.2);
   const { step, lap } = useTimeline({
     marks: HERO_MARKS,
@@ -109,7 +109,7 @@ export function HeroLive({ className, bare = false }: { className?: string; bare
   const caption = (
     <div className="flex items-center gap-3">
       {!stage.still && <StageControl paused={stage.paused} onToggle={stage.toggle} dark />}
-      {!bare && <p className="max-w-[15rem] text-[14.5px] leading-[1.4] text-paper/75">{shared.hero.caption}</p>}
+      <p className="max-w-[15rem] text-[14.5px] leading-[1.4] text-paper/75">{shared.hero.caption}</p>
     </div>
   );
 

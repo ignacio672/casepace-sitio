@@ -68,12 +68,11 @@ async function shot(page, selector, file, { settle = 400, focus, nav = false } =
 
 const LANDING = [
   ["01-inicio", "main > section:nth-of-type(1)", { settle: 5200, nav: true }],
-  ["01b-lo-que-dijo-y-lo-que-va-al-formulario", "main > section:nth-of-type(2)", { settle: 5200 }],
-  ["02-problema", "main > section:nth-of-type(3)", {}],
+  ["02-problema", "main > section:nth-of-type(2)", {}],
   ["03-caso-de-muestra-documents", "#demo > div:nth-child(1)", { settle: 2500, focus: ".rounded-stage" }],
   ["04-caso-de-muestra-interview", "#demo > div:nth-child(2)", { settle: 7600, focus: ".rounded-stage" }],
   ["05-caso-de-muestra-filing-package", "#demo > div:nth-child(3)", { settle: 2200, focus: ".rounded-stage" }],
-  ["06-como-usamos-la-ia", "main > section:nth-of-type(5)", {}],
+  ["06-como-usamos-la-ia", "main > section:nth-of-type(4)", {}],
   ["07-para-quien-es", "#who", {}],
   ["08-quienes-somos", "#who-we-are", { settle: 900 }],
   ["09-preguntas", "#questions", {}],
@@ -96,7 +95,7 @@ for (const [folder, size] of SIZES) {
 
   page = await open("/for-organizations", size);
   await shot(page, "main > section:nth-of-type(1)", path.join(OUT, folder, "12-organizaciones-inicio.png"), { settle: 5200, nav: true });
-  await shot(page, "main > section:nth-of-type(3)", path.join(OUT, folder, "13-organizaciones-problema.png"));
+  await shot(page, "main > section:nth-of-type(2)", path.join(OUT, folder, "13-organizaciones-problema.png"));
   await page.close();
 
   page = await open("/trust", size);
@@ -114,7 +113,7 @@ for (const [folder, size] of SIZES) {
 console.log("1280 px");
 {
   const page = await open("/for-firms", { width: 1280, height: 720 });
-  for (const [name, selector, options] of LANDING.slice(0, 6)) {
+  for (const [name, selector, options] of LANDING.slice(0, 5)) {
     await shot(page, selector, path.join(OUT, "1280", `${name}.png`), options);
   }
   await page.close();

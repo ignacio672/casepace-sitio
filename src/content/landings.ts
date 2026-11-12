@@ -102,11 +102,6 @@ export const landings: Record<Audience, LandingContent> = {
 export const shared = {
   hero: {
     seeCase: "See a case prepared",
-    photoAlt:
-      "A close photograph of Form I-589, Application for Asylum and for Withholding of Removal, lying on a dark desk.",
-    /** Lo que muestra la animación del inicio, para lectores de pantalla. */
-    paperDescription:
-      "Animation. On the photographed Form I-589, the client's answer about being beaten is highlighted, and Casepace checks the box for withholding of removal under the Convention Against Torture.",
     said: "What the client said",
     form: "What goes on the form",
     caption: "Every sentence traces back to something the client said.",
