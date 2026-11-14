@@ -168,7 +168,8 @@ encuentran buscando `data-pendiente`, `<Pending` o `type: "pending"`.
 Sin marcador visible, pero pendientes:
 
 - **Video de Who we are.** El lugar está listo: se completa `videoSrc` en
-  `shared.whoWeAre` y aparece debajo de las fotos.
+  `shared.whoWeAre` y aparece debajo de las fotos. El guion, en dos versiones,
+  está en `docs/GUION-VIDEO.md`.
 - **Favicon.** Es provisorio: un cuadrado negro con una raya citrón. Falta un
   isotipo de la marca.
 - **`guardarContacto`.** No hace nada hasta conectarla a Supabase.
